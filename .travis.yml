@@ -1,16 +1,11 @@
-language: c
-sudo: false
-addons:
-  apt:
-    sources:
-    - avsm
-    packages:
-    - opam
-    - libssl-dev
-before_install:
-  - export OPAMYES=1
-  - opam init
-  - opam install -q -y dune
-  - eval `opam config env`
-
-script: dune build @default @runtest
+language: node_js
+node_js:
+- 8
+os:
+- linux
+- osx
+install:
+- npm install --global esy@latest
+- esy install
+script:
+- esy build
