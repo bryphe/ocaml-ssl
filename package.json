@@ -15,10 +15,14 @@
   "dependencies": {
     "@opam/dune": "*",
     "@opam/base-unix": "*",
-    "esy-openssl": "bryphe/esy-openssl#c85e208"
+    "esy-libressl": "bryphe/esy-libressl#0dcf2f1",
+    "esy-cmake": "*"
   },
   "peerDependencies": {
     "ocaml": "~4.6.0"
+  },
+  "resolutions": {
+    "esy-cmake": "github:bryphe/esy-cmake#5a40a8e"
   },
   "devDependencies": {
     "ocaml": "~4.6.0",
