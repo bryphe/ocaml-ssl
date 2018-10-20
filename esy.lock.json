@@ -1,5 +1,5 @@
 {
-  "hash": "e98cd8d242828c716e9ddd95a2902d73",
+  "hash": "8b0a3121db135d19db552501598415a9",
   "root": "root@path:./package.json",
   "node": {
     "root@path:./package.json": {
@@ -11,8 +11,9 @@
         "opam": null
       },
       "dependencies": [
-        "@opam/base-unix@opam:base", "@opam/dune@opam:1.3.0",
-        "esy-openssl@github:bryphe/esy-openssl#c85e208", "ocaml@4.6.7"
+        "@opam/base-unix@opam:base", "@opam/dune@opam:1.4.0",
+        "esy-cmake@github:bryphe/esy-cmake#5a40a8e",
+        "esy-libressl@github:bryphe/esy-libressl#0dcf2f1", "ocaml@4.6.7"
       ]
     },
     "ocaml@4.6.7": {
@@ -26,28 +27,38 @@
       },
       "dependencies": []
     },
-    "esy-openssl@github:bryphe/esy-openssl#c85e208": {
+    "esy-libressl@github:bryphe/esy-libressl#0dcf2f1": {
       "record": {
-        "name": "esy-openssl",
-        "version": "github:bryphe/esy-openssl#c85e208",
-        "source": "github:bryphe/esy-openssl#c85e208",
+        "name": "esy-libressl",
+        "version": "github:bryphe/esy-libressl#0dcf2f1",
+        "source": "github:bryphe/esy-libressl#0dcf2f1",
+        "files": [],
+        "opam": null
+      },
+      "dependencies": [ "esy-cmake@github:bryphe/esy-cmake#5a40a8e" ]
+    },
+    "esy-cmake@github:bryphe/esy-cmake#5a40a8e": {
+      "record": {
+        "name": "esy-cmake",
+        "version": "github:bryphe/esy-cmake#5a40a8e",
+        "source": "github:bryphe/esy-cmake#5a40a8e",
         "files": [],
         "opam": null
       },
       "dependencies": []
     },
-    "@opam/dune@opam:1.3.0": {
+    "@opam/dune@opam:1.4.0": {
       "record": {
         "name": "@opam/dune",
-        "version": "opam:1.3.0",
+        "version": "opam:1.4.0",
         "source":
-          "archive:https://github.com/ocaml/dune/releases/download/1.3.0/dune-1.3.0.tbz#md5:d7c926bd6b7549cb54d5463aaccf0c91",
+          "archive:https://github.com/ocaml/dune/releases/download/1.4.0/dune-1.4.0.tbz#md5:dc862e5d821ff4d8bef16a78bd472431",
         "files": [],
         "opam": {
           "name": "dune",
-          "version": "1.3.0",
+          "version": "1.4.0",
           "opam":
-            "opam-version: \"2.0\"\nname: \"dune\"\nversion: \"1.3.0\"\nsynopsis: \"Fast, portable and opinionated build system\"\ndescription: \"\"\"\ndune is a build system that was designed to simplify the release of\nJane Street packages. It reads metadata from \"dune\" files following a\nvery simple s-expression syntax.\n\ndune is fast, it has very low-overhead and support parallel builds on\nall platforms. It has no system dependencies, all you need to build\ndune and packages using dune is OCaml. You don't need or make or bash\nas long as the packages themselves don't use bash explicitly.\n\ndune supports multi-package development by simply dropping multiple\nrepositories into the same directory.\n\nIt also supports multi-context builds, such as building against\nseveral opam roots/switches simultaneously. This helps maintaining\npackages across several versions of OCaml and gives cross-compilation\nfor free.\"\"\"\nmaintainer: \"opensource@janestreet.com\"\nauthors: \"Jane Street Group, LLC <opensource@janestreet.com>\"\nlicense: \"MIT\"\nhomepage: \"https://github.com/ocaml/dune\"\nbug-reports: \"https://github.com/ocaml/dune/issues\"\ndepends: [\n  \"ocaml\" {>= \"4.02\"}\n]\nconflicts: [\n  \"jbuilder\" {!= \"transition\"}\n]\nbuild: [\n  [\"ocaml\" \"configure.ml\" \"--libdir\" lib] {opam-version < \"2\"}\n  [\"ocaml\" \"bootstrap.ml\"]\n  [\"./boot.exe\" \"--release\" \"--subst\"] {pinned}\n  [\"./boot.exe\" \"--release\" \"-j\" jobs]\n]\ndev-repo: \"git+https://github.com/ocaml/dune.git\"\nurl {\n  src: \"https://github.com/ocaml/dune/releases/download/1.3.0/dune-1.3.0.tbz\"\n  checksum: \"md5=d7c926bd6b7549cb54d5463aaccf0c91\"\n}",
+            "opam-version: \"2.0\"\nname: \"dune\"\nversion: \"1.4.0\"\nsynopsis: \"Fast, portable and opinionated build system\"\ndescription: \"\"\"\ndune is a build system that was designed to simplify the release of\nJane Street packages. It reads metadata from \"dune\" files following a\nvery simple s-expression syntax.\n\ndune is fast, it has very low-overhead and support parallel builds on\nall platforms. It has no system dependencies, all you need to build\ndune and packages using dune is OCaml. You don't need or make or bash\nas long as the packages themselves don't use bash explicitly.\n\ndune supports multi-package development by simply dropping multiple\nrepositories into the same directory.\n\nIt also supports multi-context builds, such as building against\nseveral opam roots/switches simultaneously. This helps maintaining\npackages across several versions of OCaml and gives cross-compilation\nfor free.\"\"\"\nmaintainer: \"opensource@janestreet.com\"\nauthors: \"Jane Street Group, LLC <opensource@janestreet.com>\"\nlicense: \"MIT\"\nhomepage: \"https://github.com/ocaml/dune\"\nbug-reports: \"https://github.com/ocaml/dune/issues\"\ndepends: [\n  \"ocaml\" {>= \"4.02\"}\n]\nconflicts: [\n  \"jbuilder\" {!= \"transition\"}\n]\nbuild: [\n  [\"ocaml\" \"configure.ml\" \"--libdir\" lib] {opam-version < \"2\"}\n  [\"ocaml\" \"bootstrap.ml\"]\n  [\"./boot.exe\" \"--release\" \"--subst\"] {pinned}\n  [\"./boot.exe\" \"--release\" \"-j\" jobs]\n]\ndev-repo: \"git+https://github.com/ocaml/dune.git\"\nurl {\n  src: \"https://github.com/ocaml/dune/releases/download/1.4.0/dune-1.4.0.tbz\"\n  checksum: \"md5=dc862e5d821ff4d8bef16a78bd472431\"\n}",
           "override": {
             "build": [
               [ "ocaml", "bootstrap.ml" ],
