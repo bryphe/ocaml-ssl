@@ -8,4 +8,4 @@ install:
 - npm install --global esy@0.3.4
 - esy install
 script:
-- esy build
+- travis_wait 40 esy build
